@@ -1,11 +1,9 @@
 @extends('layouts.main')
 
-@section('title', 'HDC Events')
+@section('title', 'Produtos')
 
 @section('content')
 
-<p>Teste</p>
-<p>Teste2</p>
-
+<p>Página de produtos</p>
 
 @endsection
