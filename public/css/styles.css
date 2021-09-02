@@ -38,6 +38,10 @@ header {
     width: 40px;
 }
 
+.navbar-brand {
+    margin-left: 30px;
+}
+
 #navbar {
     justify-content: space-between;
     background-color: #fff;
@@ -139,4 +143,12 @@ footer {
 
 footer p {
     margin-bottom: 0;
+}
+
+/* CREATE EVENTS */
+
+#event-create-container input,
+#event-create-container textarea,
+#event-create-container select {
+    margin-bottom: 15px;
 }
