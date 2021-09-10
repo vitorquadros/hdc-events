@@ -25,6 +25,7 @@ class EventController extends Controller
     $event->city = $req->city;
     $event->private = $req->private;
     $event->description = $req->description;
+    $event->items = $req->items;
 
     // Image uplaod
     if($req->hasFile('image') && $req->file('image')->isValid()) {
