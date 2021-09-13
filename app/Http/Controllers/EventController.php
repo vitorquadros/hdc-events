@@ -19,8 +19,6 @@ class EventController extends Controller
       $events = Event::all();
     }
 
-    
-
     return view('welcome', ['events' => $events, 'search' => $search]);
   }
 
