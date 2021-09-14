@@ -123,4 +123,14 @@ class EventController extends Controller
 
     return redirect('/dashboard')->with('msg', 'Sua presença foi confirmada no evento ' . $event->title . '!');
   }
+
+  public function leaveEvent($id) {
+    $user = auth()->user();
+
+    $user->eventsAsParticipant()->detach($id);
+
+    $event = Event::findOrFail($id);
+
+    return redirect('/dashboard')->with('msg', 'Sua presença no evento ' . $event->title . ' foi removida com sucesso!');
+  }
 }
