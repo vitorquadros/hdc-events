@@ -84,4 +84,10 @@ class EventController extends Controller
 
     return view('events.edit', ['event' => $event]);
   }
+
+  public function update(Request $req) {
+    Event::findOrFail($req->id)->update($req->all());
+
+    return redirect('/dashboard')->with('msg', 'Evento editado com sucesso!');
+  }
 }
