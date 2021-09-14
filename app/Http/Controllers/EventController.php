@@ -86,7 +86,20 @@ class EventController extends Controller
   }
 
   public function update(Request $req) {
-    Event::findOrFail($req->id)->update($req->all());
+    $data = $req->all();
+
+    if($req->hasFile('image') && $req->file('image')->isValid()) {
+      $reqImage = $req->image;
+
+      $extension = $reqImage->extension();
+      $imgName = md5($reqImage->getClientOriginalName() . strtotime('now')) . '.' . $extension;
+
+      $reqImage->move(public_path('img/events'), $imgName);
+
+      $data['image'] = $imgName;
+    }
+
+    Event::findOrFail($req->id)->update($data);
 
     return redirect('/dashboard')->with('msg', 'Evento editado com sucesso!');
   }
