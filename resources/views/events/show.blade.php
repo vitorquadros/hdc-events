@@ -25,7 +25,7 @@
               </a>
             </form>
           @else
-            <p class="alredy-joined-msg">Você está participando deste evento</p>
+            <p class="already-joined-msg">Você está participando deste evento</p>
           @endif
           <h3>O evento conta com:</h3>
           <ul id="items-list">
